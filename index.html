@@ -1,0 +1,2708 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kowshic Manoharan — Scrum Master | Agile Delivery | Product Delivery</title>
+<meta name="description" content="Lead Scrum Master with 10 years of experience in Agile delivery, product execution, and stakeholder management across web and mobile platforms." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     THEME VARIABLES
+     ============================================ */
+  :root[data-theme="dark"] {
+    --bg-primary: #0a0e1a;
+    --bg-secondary: #0f1424;
+    --bg-card: #131a2e;
+    --bg-elevated: #1a2240;
+    --border: rgba(148, 163, 184, 0.12);
+    --border-strong: rgba(148, 163, 184, 0.25);
+    --text-primary: #e5e9f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #6366f1;
+    --accent-2: #06b6d4;
+    --accent-glow: rgba(99, 102, 241, 0.35);
+    --gradient: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.25);
+    --noise-opacity: 0.025;
+  }
+
+  :root[data-theme="light"] {
+    --bg-primary: #fafbfc;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-elevated: #f8fafc;
+    --border: rgba(15, 23, 42, 0.08);
+    --border-strong: rgba(15, 23, 42, 0.15);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --accent: #4f46e5;
+    --accent-2: #0891b2;
+    --accent-glow: rgba(79, 70, 229, 0.2);
+    --gradient: linear-gradient(135deg, #4f46e5 0%, #0891b2 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(8, 145, 178, 0.08) 100%);
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.12);
+    --shadow-glow: 0 0 40px rgba(79, 70, 229, 0.15);
+    --noise-opacity: 0;
+  }
+
+  /* ============================================
+     RESET & BASE
+     ============================================ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 10%, var(--accent-glow), transparent 40%),
+      radial-gradient(circle at 85% 80%, var(--accent-glow), transparent 35%);
+    opacity: 0.6;
+    z-index: -2;
+    pointer-events: none;
+    animation: drift 20s ease-in-out infinite alternate;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+    opacity: var(--noise-opacity);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  @keyframes drift {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-30px, 30px); }
+  }
+
+  ::selection { background: var(--accent); color: white; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--text-primary);
+  }
+
+  .gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* ============================================
+     LAYOUT
+     ============================================ */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 100px 0;
+    position: relative;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-size: clamp(28px, 4vw, 44px);
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 17px;
+    max-width: 640px;
+    margin-bottom: 56px;
+  }
+
+  /* ============================================
+     NAVIGATION
+     ============================================ */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 16px 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(0px);
+  }
+
+  nav.scrolled {
+    background: rgba(10, 14, 26, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+  }
+
+  :root[data-theme="light"] nav.scrolled {
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--gradient);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    box-shadow: var(--shadow-glow);
+    transition: transform 0.3s ease;
+  }
+
+  .logo:hover .logo-mark {
+    transform: rotate(-8deg) scale(1.1);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+  }
+
+  .theme-toggle {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 8px;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.4s ease;
+  }
+
+  .theme-toggle:hover svg { transform: rotate(20deg); }
+
+  .menu-btn {
+    display: none;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    animation: fadeUp 0.7s ease-out;
+  }
+
+  .hero-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 12px #10b981;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s ease-out 0.1s backwards;
+  }
+
+  .hero-tagline {
+    font-size: clamp(18px, 2.2vw, 22px);
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease-out 0.2s backwards;
+  }
+
+  .hero-tagline .sep {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin: 0 12px;
+    vertical-align: middle;
+  }
+
+  .hero-desc {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-bottom: 36px;
+    max-width: 560px;
+    animation: fadeUp 0.8s ease-out 0.3s backwards;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease-out 0.4s backwards;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary {
+    background: var(--gradient);
+    color: white;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px var(--accent-glow);
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: left 0.6s;
+  }
+
+  .btn-primary:hover::before { left: 100%; }
+
+  .btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Hero card */
+  .hero-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: fadeUp 0.9s ease-out 0.5s backwards, float 6s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 24px;
+    padding: 1px;
+    background: var(--gradient);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat {
+    background: var(--bg-elevated);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  .stat:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+  }
+
+  .stat-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 10px;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .stat-icon svg { width: 20px; height: 20px; }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* ============================================
+     ABOUT
+     ============================================ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text-secondary);
+    font-size: 16.5px;
+    margin-bottom: 18px;
+  }
+
+  .about-highlights {
+    display: grid;
+    gap: 16px;
+  }
+
+  .highlight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    gap: 18px;
+    transition: all 0.3s ease;
+  }
+
+  .highlight-card:hover {
+    transform: translateX(8px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+  }
+
+  .highlight-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--gradient-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .highlight-icon svg { width: 24px; height: 24px; }
+
+  .highlight-content h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .highlight-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  /* ============================================
+     EXPERIENCE — TIMELINE
+     ============================================ */
+  .timeline {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--accent-2), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: 40px;
+  }
+
+  .timeline-item:last-child { padding-bottom: 0; }
+
+  .timeline-dot {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 4px var(--bg-primary), 0 0 20px var(--accent-glow);
+    transition: all 0.3s ease;
+  }
+
+  .timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    background: var(--accent);
+  }
+
+  .timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+
+  .timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .timeline-role {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .timeline-company {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14.5px;
+  }
+
+  .timeline-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--bg-elevated);
+    padding: 6px 12px;
+    border-radius: 100px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .timeline-list {
+    list-style: none;
+    margin-top: 12px;
+  }
+
+  .timeline-list li {
+    color: var(--text-secondary);
+    font-size: 14.5px;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .timeline-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gradient);
+  }
+
+  /* ============================================
+     SKILLS
+     ============================================ */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .skill-category {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 28px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-category:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+  }
+
+  .skill-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .skill-cat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--gradient-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .skill-cat-icon svg { width: 22px; height: 22px; }
+
+  .skill-cat-title { font-size: 17px; }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-tag {
+    padding: 7px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.25s ease;
+  }
+
+  .skill-tag:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  /* ============================================
+     CASE STUDIES — CAROUSEL CARDS
+     ============================================ */
+  .case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 28px;
+  }
+
+  .case-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .case-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .case-header {
+    padding: 24px 28px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--gradient-soft);
+  }
+
+  .case-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    box-shadow: var(--shadow-glow);
+    flex-shrink: 0;
+  }
+
+  .case-title-block { flex: 1; }
+
+  .case-title {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .case-tagline {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .case-tags {
+    padding: 14px 28px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .case-meta-tag {
+    font-size: 11px;
+    padding: 4px 10px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Carousel */
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 18px 0 0;
+    background: var(--bg-elevated);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  .carousel-slide {
+    flex: 0 0 100%;
+    padding: 28px 28px 24px;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .slide-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+
+  .slide-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.25;
+  }
+
+  .slide-content {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .slide-bullets {
+    list-style: none;
+    margin-top: 6px;
+  }
+
+  .slide-bullets li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 6px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+
+  .slide-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gradient);
+  }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+  }
+
+  .carousel-arrows {
+    display: flex;
+    gap: 8px;
+  }
+
+  .carousel-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+  }
+
+  .carousel-btn:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+  }
+
+  .carousel-btn svg { width: 16px; height: 16px; }
+
+  .carousel-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-strong);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+  }
+
+  .carousel-dot.active {
+    background: var(--gradient);
+    width: 24px;
+    border-radius: 4px;
+  }
+
+  .case-actions {
+    padding: 18px 28px 24px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 10px 16px;
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .case-link:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .case-link svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .case-link:hover svg { transform: translate(2px, -2px); }
+
+  /* ============================================
+     CERTIFICATIONS
+     ============================================ */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+
+  .cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background: var(--gradient);
+    transition: width 0.4s ease;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+  }
+
+  .cert-card:hover::before { width: 100%; }
+
+  .cert-badge {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .cert-badge svg { width: 28px; height: 28px; }
+
+  .cert-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .cert-full {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin-bottom: 18px;
+    flex: 1;
+  }
+
+  .cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 8px 14px;
+    background: var(--gradient-soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .cert-link:hover {
+    background: var(--gradient);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .cert-link svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .cert-link:hover svg { transform: translate(2px, -2px); }
+
+  /* ============================================
+     EDUCATION + LANGUAGES
+     ============================================ */
+  .edu-lang-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 24px;
+  }
+
+  .info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+    transition: all 0.3s ease;
+  }
+
+  .info-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+  }
+
+  .info-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .info-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--gradient-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .info-card-icon svg { width: 22px; height: 22px; }
+
+  .info-card-title { font-size: 18px; }
+
+  .edu-item h4 {
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  .edu-item .edu-school {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .edu-item .edu-date {
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .lang-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .lang-item:last-child { border-bottom: none; }
+
+  .lang-name { font-weight: 600; font-size: 15px; }
+
+  .lang-level {
+    font-size: 12px;
+    padding: 4px 12px;
+    background: var(--gradient-soft);
+    border-radius: 100px;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* ============================================
+     CONTACT — BRANDED ACTION BUTTONS
+     ============================================ */
+  .contact-section { text-align: center; }
+
+  .contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 64px 40px;
+    max-width: 920px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-soft);
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .contact-card > * { position: relative; z-index: 1; }
+
+  .contact-card h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    margin-bottom: 16px;
+  }
+
+  .contact-card p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    margin-bottom: 40px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto 32px;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .action-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--brand-color, var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  .action-btn > * { position: relative; z-index: 1; }
+
+  .action-btn:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-color, var(--accent));
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .action-btn:hover::before { opacity: 1; }
+
+  .action-btn:hover .action-icon { background: rgba(255, 255, 255, 0.2); color: white; }
+  .action-btn:hover .action-label,
+  .action-btn:hover .action-value { color: white; }
+
+  .action-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--brand-color, var(--accent));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .action-icon svg { width: 22px; height: 22px; }
+
+  .action-text { display: flex; flex-direction: column; min-width: 0; }
+
+  .action-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+  }
+
+  .action-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Brand-color helpers */
+  .brand-email { --brand-color: #EA4335; }
+  .brand-whatsapp { --brand-color: #25D366; }
+  .brand-call { --brand-color: #6366f1; }
+  .brand-linkedin { --brand-color: #0A66C2; }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13.5px;
+  }
+
+  footer .heart {
+    color: #ef4444;
+    display: inline-block;
+    animation: beat 1.4s ease-in-out infinite;
+  }
+
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* ============================================
+     SCROLL ANIMATIONS
+     ============================================ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .edu-lang-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .menu-btn { display: inline-flex; }
+    section { padding: 70px 0; }
+    .contact-card { padding: 48px 24px; }
+    .case-studies-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 560px) {
+    .hero { padding-top: 100px; }
+    .hero-cta { width: 100%; flex-direction: column; }
+    .btn { width: 100%; justify-content: center; }
+    .timeline-header { flex-direction: column; align-items: flex-start; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .hero-card { padding: 24px; }
+    .case-actions { flex-direction: column; }
+    .case-link { width: 100%; }
+    .carousel-slide { padding: 22px 22px 18px; }
+  }
+
+  @media print {
+    nav, .theme-toggle, .menu-btn, .hero-cta, .contact-actions, .carousel-controls { display: none; }
+    body { background: white; color: black; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+     ============================================ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">K</span>
+      <span>Kowshic M.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </ul>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================
+     HERO
+     ============================================ -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>Open to Scrum Master, Product Owner & Product Manager roles</span>
+        </div>
+        <h1>Hi, I'm <span class="gradient-text">Kowshic Manoharan</span></h1>
+        <p class="hero-tagline">
+          Scrum Master <span class="sep"></span> Agile Delivery <span class="sep"></span> Product Delivery
+        </p>
+        <p class="hero-desc">
+          A decade of experience driving Agile delivery, product execution, and cross-functional
+          collaboration across web and mobile platforms. I help teams ship confidently and turn
+          customer insight into prioritized, measurable outcomes.
+        </p>
+        <div class="hero-cta">
+          <a href="#case-studies" class="btn btn-primary">
+            View Case Studies
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            Get in Touch
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Years in IT</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5</div>
+            <div class="stat-label">PM Case Studies</div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="stat-label">Cross-functional Teams Led</div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="stat-label">Multi-Platform Releases</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section id="about">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Bridging <span class="gradient-text">Agile delivery</span> and <span class="gradient-text">product thinking</span></h2>
+    </div>
+    <div class="about-grid" style="margin-top: 40px;">
+      <div class="about-text reveal">
+        <p>
+          I'm a Lead Scrum Master with a decade of experience delivering customer-facing products
+          across web and mobile platforms. My work has spanned multiple domains where precision,
+          accountability, and a strong product mindset really matter.
+        </p>
+        <p>
+          Beyond facilitation, I partner closely with Product Owners on backlog refinement, prioritization,
+          MVP-to-MMP evolution, and turning customer feedback into roadmap decisions. I've built Agile
+          dashboards that made delivery health visible to leadership, and coached teams through
+          Waterfall-to-Scrum transformations.
+        </p>
+        <p>
+          To deepen my product craft, I've developed five product management case studies covering
+          PRDs, product strategy, prioritization, GTM, and roadmap planning — bridging delivery
+          excellence with product ownership.
+        </p>
+      </div>
+
+      <div class="about-highlights">
+        <div class="highlight-card reveal reveal-delay-1">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="highlight-content">
+            <h4>Delivery Excellence</h4>
+            <p>Predictable delivery through Agile metrics, dashboards, and continuous improvement of sprint health and release readiness.</p>
+          </div>
+        </div>
+        <div class="highlight-card reveal reveal-delay-2">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="highlight-content">
+            <h4>Stakeholder Alignment</h4>
+            <p>Trusted partner across Product, Engineering, QA, and business stakeholders.</p>
+          </div>
+        </div>
+        <div class="highlight-card reveal reveal-delay-3">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="highlight-content">
+            <h4>Product Mindset</h4>
+            <p>Five product case studies covering PRDs, strategy, prioritization, GTM, and roadmap planning.</p>
+          </div>
+        </div>
+        <div class="highlight-card reveal reveal-delay-4">
+          <div class="highlight-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="highlight-content">
+            <h4>Coaching &amp; Culture</h4>
+            <p>Coached cross-functional teams through Agile transformation and maturity — building cultures of collaboration, transparency, and continuous improvement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     EXPERIENCE
+     ============================================ -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">A <span class="gradient-text">decade</span> of Agile leadership</h2>
+      <p class="section-subtitle">From QA Engineer to Lead Scrum Master — a journey of growing scope, ownership, and product impact.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Lead Scrum Master — NetBenefits</div>
+              <div class="timeline-company">Fidelity Investments · Chennai</div>
+            </div>
+            <div class="timeline-date">Jan 2023 – Present</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Led Agile delivery and release coordination for large-scale customer-facing fintech platforms across iOS, Android, iPad, and web ecosystems.</li>
+            <li>Partnered with Product, Engineering, QA, and business stakeholders to drive roadmap execution, sprint alignment, and outcome-focused delivery.</li>
+            <li>Analyzed customer feedback, NPS trends, app reviews, and feature adoption insights to support data-informed prioritization and product improvement decisions.</li>
+            <li>Enabled MVP-to-MMP product evolution by identifying customer pain points, prioritization opportunities, and delivery trade-offs.</li>
+            <li>Built leadership dashboards tracking sprint health, release readiness, defect leakage, and quality trends to improve executive visibility and proactive decision-making.</li>
+            <li>Facilitated Agile ceremonies across cross-functional squads, improving collaboration, delivery predictability, continuous improvement practices including the QTP.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Scrum Master — HRMS</div>
+              <div class="timeline-company">WAP · Chennai</div>
+            </div>
+            <div class="timeline-date">Jan 2022 – Dec 2022</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Introduced Agile delivery practices for a product built from scratch and coached cross-functional teams on Scrum principles and Agile execution.</li>
+            <li>Tracked sprint velocity, burn-down, lead time, and cycle time metrics to improve sprint predictability and delivery transparency.</li>
+            <li>Partnered with Product Owners to strengthen backlog quality, prioritization alignment, and Definition of Ready/Done practices.</li>
+            <li>Improved operational efficiency through continuous process optimization and Agile maturity initiatives.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Scrum Master — Internal Tools</div>
+              <div class="timeline-company">WAP · Chennai</div>
+            </div>
+            <div class="timeline-date">Apr 2021 – Dec 2022</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Facilitated Agile transformation initiatives enabling teams to transition from Waterfall to Scrum across internal product development programs.</li>
+            <li>Coached Product Owners on prioritization techniques and roadmap alignment to improve business-value delivery.</li>
+            <li>Resolved cross-team dependencies and enabled collaboration between Engineering, QA, and Product teams.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">Scrum Master / Test Lead</div>
+              <div class="timeline-company">WAP · Chennai</div>
+            </div>
+            <div class="timeline-date">Apr 2018 – May 2021</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Led Agile delivery and QA infiatives for enterprise collaboration products integrated with Google Calendar, Office 365, Salesforce, and Calendar.</li>
+            <li>Contributed to product planning, estimation, sprint execution, and prioritization discussions alongside Product Management and Engineering teams.</li>
+            <li>Developed Selenium WebDriver automation scripts using Java to reduce repetitive testing efforts and improve QA efficiency.</li>
+            <li>Recognized for supporting multiple production releases with zero critical production defects.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <div>
+              <div class="timeline-role">QA Test Engineer</div>
+              <div class="timeline-company">WAP · Chennai</div>
+            </div>
+            <div class="timeline-date">Jun 2016 – Mar 2018</div>
+          </div>
+          <ul class="timeline-list">
+            <li>Performed functional, regression, integration, localization, and compatibility testing across web and mobile platforms.</li>
+            <li>Collaborated with Development, QA, and Product teams to improve software quality, usability, and release stability.</li>
+            <li>Established testing standards and facilitated knowledge-sharing initiatives across teams.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     SKILLS
+     ============================================ -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">Tools &amp; <span class="gradient-text">capabilities</span></h2>
+      <p class="section-subtitle">A blend of Agile delivery craft, product thinking, and people leadership.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category reveal reveal-delay-1">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div class="skill-cat-title">Agile &amp; Delivery</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Scrum Facilitation</span>
+          <span class="skill-tag">Kanban Workflow</span>
+          <span class="skill-tag">Retrospective Facilitation</span>
+          <span class="skill-tag">Release Governance</span>
+          <span class="skill-tag">Agile Metrics Tracking</span>
+          <span class="skill-tag">DoR / DoD Management</span>
+          <span class="skill-tag">Delivery Tracking &amp; Reporting</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal reveal-delay-2">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="skill-cat-title">Product Management</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">PRD Creation</span>
+          <span class="skill-tag">Roadmap Planning</span>
+          <span class="skill-tag">Feature Prioritization</span>
+          <span class="skill-tag">Product Discovery</span>
+          <span class="skill-tag">GTM Strategy</span>
+          <span class="skill-tag">User Story Mapping</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal reveal-delay-3">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="skill-cat-title">Leadership &amp; Collaboration</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Stakeholder Mgmt</span>
+          <span class="skill-tag">Team Facilitation</span>
+          <span class="skill-tag">Coaching</span>
+          <span class="skill-tag">Conflict Resolution</span>
+          <span class="skill-tag">Cross-team Collab</span>
+          <span class="skill-tag">Risk Mitigation</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal reveal-delay-4">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="skill-cat-title">Tools &amp; Platforms</div>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">Jira</span>
+          <span class="skill-tag">Confluence</span>
+          <span class="skill-tag">Notion</span>
+          <span class="skill-tag">Redmine</span>
+          <span class="skill-tag">Adobe Analytics</span>
+          <span class="skill-tag">Localytics</span>
+          <span class="skill-tag">MoEngage</span>
+          <span class="skill-tag">LaunchDarkly</span>
+          <span class="skill-tag">SeeTest</span>
+          <span class="skill-tag">Selenium</span>
+          <span class="skill-tag">Salesforce</span>
+          <span class="skill-tag">Office 365</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CASE STUDIES — CAROUSEL CARDS
+     ============================================ -->
+<section id="case-studies">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Case Studies</div>
+      <h2 class="section-title">Five product <span class="gradient-text">strategy deep-dives</span></h2>
+      <p class="section-subtitle">Each case study covers vision, market analysis, user insights, competitive positioning, value proposition, product principles, and go-to-market — for some of the most talked-about products of our time.</p>
+    </div>
+
+    <div class="case-studies-grid">
+
+      <!-- ====== CLUBHOUSE ====== -->
+      <div class="case-card reveal reveal-delay-1">
+        <div class="case-header">
+          <div class="case-logo">CH</div>
+          <div class="case-title-block">
+            <h3 class="case-title">Clubhouse</h3>
+            <p class="case-tagline">Reinventing social audio through fun, async voice messaging</p>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-meta-tag">PRD</span>
+          <span class="case-meta-tag">Strategy</span>
+          <span class="case-meta-tag">High-Level Deck</span>
+        </div>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track" data-track>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">01 / 06 · VISION</div>
+                <div class="slide-title">Meaningful Voice Connections</div>
+                <p class="slide-content">Transform Clubhouse into the go-to app for social voice messaging.</p>
+                <ul class="slide-bullets">
+                  <li>Effortless Communication</li>
+                  <li>Personal &amp; Meaningful</li>
+                  <li>Fun &amp; Engaging</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">02 / 06 · OPPORTUNITY</div>
+                <div class="slide-title">A $145B Messaging Wave</div>
+                <p class="slide-content">Async voice sits at the intersection of three growing markets.</p>
+                <ul class="slide-bullets">
+                  <li>Social audio CAGR 24.4% to 2030</li>
+                  <li>Messaging apps to $145B by 2028</li>
+                  <li>Voice tech market $23.5B</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">03 / 06 · PROBLEM</div>
+                <div class="slide-title">Voice Today is Dull</div>
+                <p class="slide-content">Most voice tools lack expressiveness — and live audio creates pressure to perform.</p>
+                <ul class="slide-bullets">
+                  <li>Missing fun features &amp; reactions</li>
+                  <li>Limited expressiveness</li>
+                  <li>Async vs. live tension</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">04 / 06 · AUDIENCE</div>
+                <div class="slide-title">Voice-First Generation</div>
+                <ul class="slide-bullets">
+                  <li>Young Adults 18–35</li>
+                  <li>Creators &amp; Influencers</li>
+                  <li>Remote Workers &amp; Teams</li>
+                  <li>Non-English Speakers</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">05 / 06 · DIFFERENTIATION</div>
+                <div class="slide-title">Private, AI-Powered Audio</div>
+                <ul class="slide-bullets">
+                  <li>Private Voice Circles</li>
+                  <li>AI-Powered Smart Replies &amp; Summaries</li>
+                  <li>Soundboard Reactions &amp; Filters</li>
+                  <li>Premium audio tools for creators</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">06 / 06 · GO-TO-MARKET</div>
+                <div class="slide-title">Creator-Led Viral Growth</div>
+                <ul class="slide-bullets">
+                  <li>Referral boost program</li>
+                  <li>College campus campaigns</li>
+                  <li>Creator partnerships</li>
+                  <li>Premium monetization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-arrows">
+              <button class="carousel-btn" data-prev aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="carousel-btn" data-next aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+        </div>
+        <div class="case-actions">
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQD71mWghMv8RIg4z4F5TdOiAU-p8n-86-bpcK7ZN5e56hM?e=OivbVj" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Clubhouse PRD link">
+            View PRD
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQAWKwolhm3SQbW46HG25smlAWusP6y6ePFkTtdAvifhtyU?e=pin6Uo" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Clubhouse Strategy link">
+            View Strategy
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/p/c/f7d1f56ea1bd893d/IQBSgtmpKfPLR6tdH6It9AlaAcQK_dWxkhj1fbKDBpDxDNU?e=3sjalC" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Clubhouse Deck link">
+            View Deck
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ====== HUMANE AI ====== -->
+      <div class="case-card reveal reveal-delay-2">
+        <div class="case-header">
+          <div class="case-logo">HA</div>
+          <div class="case-title-block">
+            <h3 class="case-title">Humane AI</h3>
+            <p class="case-tagline">Repositioning the AI Pin into a must-have, screen-free wearable</p>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-meta-tag">PRD</span>
+          <span class="case-meta-tag">Strategy</span>
+          <span class="case-meta-tag">High-Level Deck</span>
+        </div>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track" data-track>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">01 / 06 · VISION</div>
+                <div class="slide-title">Screen-Free AI Assistance</div>
+                <p class="slide-content">Stay connected, productive, and informed — without screen distractions.</p>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">02 / 06 · MARKET</div>
+                <div class="slide-title">$100B+ AI Wearables by 2030</div>
+                <ul class="slide-bullets">
+                  <li>20%+ CAGR</li>
+                  <li>Personalized AI is mainstream</li>
+                  <li>Wearable ecosystems expanding</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">03 / 06 · PAIN POINTS</div>
+                <div class="slide-title">Inconsistent Experience</div>
+                <ul class="slide-bullets">
+                  <li>Tech enthusiasts: feels beta, weak UI</li>
+                  <li>Productivity pros: no Google/Apple integration</li>
+                  <li>Minimalists: voice-only too limiting</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">04 / 06 · COMPETITION</div>
+                <div class="slide-title">Beating Vision Pro &amp; Meta</div>
+                <ul class="slide-bullets">
+                  <li>Apple Vision Pro — immersive but bulky</li>
+                  <li>Ray-Ban Meta — stylish but limited AI</li>
+                  <li>Amazon Alexa — proven but not wearable</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">05 / 06 · VALUE PROPOSITION</div>
+                <div class="slide-title">Privacy-First Wearable</div>
+                <ul class="slide-bullets">
+                  <li>Context Aware</li>
+                  <li>Always Available</li>
+                  <li>Privacy-First — local processing, no always-on recording</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">06 / 06 · GO-TO-MARKET</div>
+                <div class="slide-title">3-Phase Rollout</div>
+                <ul class="slide-bullets">
+                  <li>Phase 1 — tech enthusiasts (reviews, events)</li>
+                  <li>Phase 2 — productivity pros (LinkedIn campaigns)</li>
+                  <li>Phase 3 — broader consumers (retail, media)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-arrows">
+              <button class="carousel-btn" data-prev aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="carousel-btn" data-next aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+        </div>
+        <div class="case-actions">
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQCKU8KIeO7QSrclalDbmVEFAcXOZZnya7oBCe8AE-fMY9w?e=5ib6jz" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Humane AI PRD link">
+            View PRD
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/w/c/f7d1f56ea1bd893d/IQAgTTBFKyPLSb-q8c1tbUn4AcVc8qT9kv6jcSU1aFhiQfg?e=mWc8JK" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Humane AI Strategy link">
+            View Strategy
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/p/c/f7d1f56ea1bd893d/IQBoiyWJMyUkR6tOZnTNXrJ0AYNfv1N2yLU-IixTk2pO2aQ?e=o6nxkP" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Humane AI Deck link">
+            View Deck
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ====== KOO ====== -->
+      <div class="case-card reveal reveal-delay-3">
+        <div class="case-header">
+          <div class="case-logo">KO</div>
+          <div class="case-title-block">
+            <h3 class="case-title">Koo</h3>
+            <p class="case-tagline">Reviving India's social platform with vernacular-first, trust-driven design</p>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-meta-tag">PRD</span>
+          <span class="case-meta-tag">Strategy</span>
+          <span class="case-meta-tag">High-Level Deck</span>
+        </div>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track" data-track>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">01 / 06 · VISION</div>
+                <div class="slide-title">Empowering India Through Connection</div>
+                <ul class="slide-bullets">
+                  <li>Homegrown</li>
+                  <li>Inclusive</li>
+                  <li>Trusted platform for Indian users</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">02 / 06 · MARKET</div>
+                <div class="slide-title">850M+ Indian Internet Users</div>
+                <ul class="slide-bullets">
+                  <li>88% of new users prefer vernacular</li>
+                  <li>60%+ care about privacy</li>
+                  <li>Short-form &amp; AI feeds dominate time</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">03 / 06 · COMPETITION</div>
+                <div class="slide-title">Beyond X &amp; Instagram</div>
+                <p class="slide-content">Opportunity in trust, regional content, and community-driven discourse.</p>
+                <ul class="slide-bullets">
+                  <li>X, Instagram, Facebook</li>
+                  <li>Moj, Josh — short-form rivals</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">04 / 06 · LESSONS LEARNED</div>
+                <div class="slide-title">Why Past Attempts Failed</div>
+                <ul class="slide-bullets">
+                  <li>Lack of unique value</li>
+                  <li>Ineffective moderation</li>
+                  <li>Limited vernacular engagement</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">05 / 06 · PRINCIPLES</div>
+                <div class="slide-title">Four Product Pillars</div>
+                <ul class="slide-bullets">
+                  <li>Vernacular-First</li>
+                  <li>Community-Driven</li>
+                  <li>Trust &amp; Credibility</li>
+                  <li>Monetization for All</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">06 / 06 · GO-TO-MARKET</div>
+                <div class="slide-title">Phased Relaunch (12 mo)</div>
+                <ul class="slide-bullets">
+                  <li>Soft launch — 3 months</li>
+                  <li>Mass adoption — 6 months</li>
+                  <li>Monetization &amp; expansion — 12 months</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-arrows">
+              <button class="carousel-btn" data-prev aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="carousel-btn" data-next aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+        </div>
+        <div class="case-actions">
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQAZnGTuKYUkSrX9UvLNSVd0AZDOnFVwBcQ_99Mr-rHmCiE?e=HKJakC" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Koo PRD link">
+            View PRD
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQDDctQuteFNQoqITxwS_WGlAU3GpVtVxvdSTZOlPxZrRvE?e=5Zt1Dj" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Koo Strategy link">
+            View Strategy
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/p/c/f7d1f56ea1bd893d/IQB1GMqEvboKRoP8RVHAodwDAeWllWRed3hhKm8siAfRzps?e=wMw4GM" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Koo Deck link">
+            View Deck
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ====== PROTON ====== -->
+      <div class="case-card reveal reveal-delay-4">
+        <div class="case-header">
+          <div class="case-logo">PR</div>
+          <div class="case-title-block">
+            <h3 class="case-title">Proton</h3>
+            <p class="case-tagline">Solidifying Proton as the leader in privacy-first productivity</p>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-meta-tag">PRD</span>
+          <span class="case-meta-tag">Strategy</span>
+          <span class="case-meta-tag">High-Level Deck</span>
+        </div>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track" data-track>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">01 / 06 · VISION</div>
+                <div class="slide-title">World's Most Trusted Privacy Suite</div>
+                <ul class="slide-bullets">
+                  <li>Trusted</li>
+                  <li>User-Friendly</li>
+                  <li>Seamless</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">02 / 06 · MARKET</div>
+                <div class="slide-title">A $50B Email Industry Shift</div>
+                <ul class="slide-bullets">
+                  <li>7–10% CAGR</li>
+                  <li>Tightening regulations (GDPR, CCPA)</li>
+                  <li>Decentralized &amp; encrypted tech rising</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">03 / 06 · PAIN POINTS</div>
+                <div class="slide-title">Privacy vs. Productivity</div>
+                <ul class="slide-bullets">
+                  <li>Lack of collaboration tools</li>
+                  <li>High switching costs</li>
+                  <li>Limited AI features</li>
+                  <li>Performance trade-offs</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">04 / 06 · COMPETITION</div>
+                <div class="slide-title">Beyond Google &amp; Microsoft</div>
+                <ul class="slide-bullets">
+                  <li>Google Workspace — collab/AI but tracking</li>
+                  <li>Microsoft 365 — enterprise but pricey</li>
+                  <li>Proton — best privacy, needs collab/AI</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">05 / 06 · VALUE PROPOSITION</div>
+                <div class="slide-title">Swiss-Backed E2E Privacy</div>
+                <ul class="slide-bullets">
+                  <li>True end-to-end encryption</li>
+                  <li>Swiss legal protection</li>
+                  <li>Work without worry — no ads, no tracking</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">06 / 06 · GO-TO-MARKET</div>
+                <div class="slide-title">Open-Source Freemium</div>
+                <ul class="slide-bullets">
+                  <li>Localized campaigns</li>
+                  <li>Open-source &amp; ethical positioning</li>
+                  <li>Privacy-preserving AI</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-arrows">
+              <button class="carousel-btn" data-prev aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="carousel-btn" data-next aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+        </div>
+        <div class="case-actions">
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQAEwyQwqU8MTrURjUf3-lqsARVvYgNAqExebAVWsNnbZrs?e=p1WXa8" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Proton PRD link">
+            View PRD
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQAuqTyjhj6WQLVs_8babPiaAQx6nVZSAVUz5dPD8aMdu6I?e=samtEs" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Proton Strategy link">
+            View Strategy
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/p/c/f7d1f56ea1bd893d/IQBqJO1JYHb_Q4KaJtIZCOV4AbJ1HqObX2uEnc5z7HMmaqQ?e=ATlMXX" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Proton Deck link">
+            View Deck
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ====== RAPIDO ====== -->
+      <div class="case-card reveal reveal-delay-5">
+        <div class="case-header">
+          <div class="case-logo">RP</div>
+          <div class="case-title-block">
+            <h3 class="case-title">Rapido</h3>
+            <p class="case-tagline">Scaling affordable, safe, multimodal mobility across Tier 2 &amp; 3 India</p>
+          </div>
+        </div>
+        <div class="case-tags">
+          <span class="case-meta-tag">PRD</span>
+          <span class="case-meta-tag">Strategy</span>
+          <span class="case-meta-tag">High-Level Deck</span>
+        </div>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track" data-track>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">01 / 06 · VISION</div>
+                <div class="slide-title">Mobility for Tier 2 &amp; 3 Cities</div>
+                <ul class="slide-bullets">
+                  <li>Simple</li>
+                  <li>Budget-Friendly</li>
+                  <li>Safe</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">02 / 06 · MARKET</div>
+                <div class="slide-title">$90B+ TAM by 2030</div>
+                <ul class="slide-bullets">
+                  <li>SAM ~$15B bike taxis + ~$10B autos/cabs</li>
+                  <li>SOM 10–15% bike/auto, 5–10% cabs/intercity</li>
+                  <li>Hyperlocal first-mover opportunity</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">03 / 06 · TRENDS</div>
+                <div class="slide-title">EV + Multimodal Future</div>
+                <ul class="slide-bullets">
+                  <li>Rapid urbanization</li>
+                  <li>Bike-taxi regulatory uncertainty</li>
+                  <li>Multimodal travel preferences</li>
+                  <li>EV adoption push</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">04 / 06 · COMPETITION</div>
+                <div class="slide-title">Beyond Uber &amp; Ola</div>
+                <ul class="slide-bullets">
+                  <li>Uber — brand &amp; tech, weak on bikes</li>
+                  <li>Ola — fleet, regulatory issues</li>
+                  <li>Bounce — EV focus, limited reach</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">05 / 06 · USER SEGMENTS</div>
+                <div class="slide-title">Four Personas, Four Needs</div>
+                <ul class="slide-bullets">
+                  <li>Daily commuters — price &amp; reliability</li>
+                  <li>Women riders — safety, SOS, female captains</li>
+                  <li>Gig workers — cost, flexibility, EV financing</li>
+                  <li>Intercity travelers — connectivity</li>
+                </ul>
+              </div>
+            </div>
+            <div class="carousel-slide">
+              <div>
+                <div class="slide-num">06 / 06 · GO-TO-MARKET</div>
+                <div class="slide-title">Hyperlocal Tier 2/3 Expansion</div>
+                <ul class="slide-bullets">
+                  <li>B2B partnerships</li>
+                  <li>Offline activations</li>
+                  <li>Affordable / fast / safe positioning</li>
+                  <li>KPIs: CAC, ride completion, driver retention</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <div class="carousel-arrows">
+              <button class="carousel-btn" data-prev aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="carousel-btn" data-next aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+        </div>
+        <div class="case-actions">
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQDu9UPQ9Ra1SJ3GK4Ckb6vWAWDgdwPWJ4fPY2_8F9eHLsU?e=3Tm9QC" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Rapido PRD link">
+            View PRD
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/b/c/f7d1f56ea1bd893d/IQAcqoKxjl2kSYFx42NHZwwOAZ1htmgR7RGIoAAjI-NbrIk?e=gihdxk" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Rapido Strategy link">
+            View Strategy
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+          <a href="https://1drv.ms/p/c/f7d1f56ea1bd893d/IQD36zrtzINWTKW7Cv5VYU1FAdev8HMqqCWlDGgcRjPbLgo?e=Zfiqtl" class="case-link" target="_blank" rel="noopener" data-link-placeholder="Paste Rapido Deck link">
+            View Deck
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CERTIFICATIONS
+     ============================================ -->
+<section id="certifications">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Certifications</div>
+      <h2 class="section-title">Credentials &amp; <span class="gradient-text">qualifications</span></h2>
+    </div>
+
+    <div class="certs-grid" style="margin-top: 32px;">
+      <div class="cert-card reveal reveal-delay-1">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <div class="cert-name">CSM</div>
+        <div class="cert-full">Certified Scrum Master</div>
+        <a href="https://www.linkedin.com/posts/kowshic-manoharan_certified-scrum-master-ugcPost-6779311811591323648-h15p?utm_source=share&utm_medium=member_desktop&rcm=ACoAABLYLu8B5fmNQqyWF3RJz9VAopmVofbDsBk" target="_blank" rel="noopener" class="cert-link" data-link-placeholder="Paste CSM cert link">
+          View Certificate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+      </div>
+      <div class="cert-card reveal reveal-delay-2">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <div class="cert-name">PSM</div>
+        <div class="cert-full">Professional Scrum Master</div>
+        <a href="https://www.linkedin.com/posts/kowshic-manoharan_professionalscrummaster-psmi-agile-ugcPost-7104703847666749441-asMp?utm_source=share&utm_medium=member_desktop&rcm=ACoAABLYLu8B5fmNQqyWF3RJz9VAopmVofbDsBk" target="_blank" rel="noopener" class="cert-link" data-link-placeholder="Paste PSM cert link">
+          View Certificate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+      </div>
+      <div class="cert-card reveal reveal-delay-3">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <div class="cert-name">CSPO</div>
+        <div class="cert-full">Certified Scrum Product Owner</div>
+        <a href="" target="_blank" rel="noopener" class="cert-link" data-link-placeholder="Paste CSPO cert link">
+          View Certificate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+      </div>
+      <div class="cert-card reveal reveal-delay-4">
+        <div class="cert-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        </div>
+        <div class="cert-name">PM Certified</div>
+        <div class="cert-full">Product Management Certified</div>
+        <a href="https://www.linkedin.com/posts/kowshic-manoharan_product-management-ugcPost-7305138917811335168-2mVn?utm_source=share&utm_medium=member_desktop&rcm=ACoAABLYLu8B5fmNQqyWF3RJz9VAopmVofbDsBk" target="_blank" rel="noopener" class="cert-link" data-link-placeholder="Paste PM cert link">
+          View Certificate
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     EDUCATION & LANGUAGES
+     ============================================ -->
+<section id="education">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Education &amp; Languages</div>
+      <h2 class="section-title">Foundation &amp; <span class="gradient-text">communication</span></h2>
+    </div>
+
+    <div class="edu-lang-grid" style="margin-top: 40px;">
+      <div class="info-card reveal reveal-delay-1">
+        <div class="info-card-header">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="info-card-title">Education</div>
+        </div>
+        <div class="edu-item">
+          <h4>B-Tech, Information Technology</h4>
+          <div class="edu-school">Info Institute Of Engineering, Coimbatore</div>
+          <div class="edu-date">Graduated April 2016</div>
+        </div>
+      </div>
+
+      <div class="info-card reveal reveal-delay-2">
+        <div class="info-card-header">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="info-card-title">Languages</div>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Tamil</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">English</span>
+          <span class="lang-level">B2 — Upper Intermediate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONTACT — BRANDED ACTION BUTTONS
+     ============================================ -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="section-label" style="justify-content: center;">Let's Connect</div>
+      <h2>Open to <span class="gradient-text">new opportunities</span></h2>
+      <p>If you're hiring for Scrum Master, Product Owner, or Product Manager roles — or just want to chat Agile, products, or fintech — reach out on the channel that works best for you.</p>
+
+      <div class="contact-actions">
+        <a href="mailto:kowshic24@outlook.com" class="action-btn brand-email">
+          <span class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <span class="action-text">
+            <span class="action-label">Email</span>
+            <span class="action-value">kowshic24@outlook.com</span>
+          </span>
+        </a>
+
+        <a href="https://wa.me/918220897979" target="_blank" rel="noopener" class="action-btn brand-whatsapp">
+          <span class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+          </span>
+          <span class="action-text">
+            <span class="action-label">WhatsApp</span>
+            <span class="action-value">+91 82208 97979</span>
+          </span>
+        </a>
+
+        <a href="tel:+918220897979" class="action-btn brand-call">
+          <span class="action-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="action-text">
+            <span class="action-label">Call</span>
+            <span class="action-value">+91 82208 97979</span>
+          </span>
+        </a>
+
+        <a href="https://linkedin.com/in/kowshic-manoharan" target="_blank" rel="noopener" class="action-btn brand-linkedin">
+          <span class="action-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </span>
+          <span class="action-text">
+            <span class="action-label">LinkedIn</span>
+            <span class="action-value">/in/kowshic-manoharan</span>
+          </span>
+        </a>
+      </div>
+
+      <a href="mailto:kowshic24@outlook.com?subject=Opportunity%20Discussion" class="btn btn-primary">
+        Send a Message
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Kowshic Manoharan. Crafted with <span class="heart">&#9829;</span> &middot; All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // ============================================
+  // THEME TOGGLE
+  // ============================================
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const root = document.documentElement;
+
+  const sunIcon = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+  const moonIcon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    themeIcon.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+    try { localStorage.setItem('kowshic-theme', theme); } catch(e) {}
+  }
+
+  let savedTheme = 'dark';
+  try {
+    const stored = localStorage.getItem('kowshic-theme');
+    if (stored) savedTheme = stored;
+  } catch(e) {}
+  setTheme(savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+
+  // ============================================
+  // NAV SCROLL EFFECT
+  // ============================================
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // ============================================
+  // SCROLL REVEAL ANIMATIONS
+  // ============================================
+  const observerOpts = { threshold: 0.12, rootMargin: '0px 0px -60px 0px' };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOpts);
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ============================================
+  // SMOOTH SCROLL FOR NAV LINKS
+  // ============================================
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href === '#' || href === '#contact-link-placeholder') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ============================================
+  // CASE STUDY CAROUSELS
+  // ============================================
+  document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('[data-track]');
+    const slides = track.children;
+    const totalSlides = slides.length;
+    const dotsContainer = carousel.querySelector('[data-dots]');
+    const prevBtn = carousel.querySelector('[data-prev]');
+    const nextBtn = carousel.querySelector('[data-next]');
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    // Build dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+    const dots = dotsContainer.children;
+
+    function goToSlide(index) {
+      currentIndex = (index + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      Array.from(dots).forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+    }
+
+    function next() { goToSlide(currentIndex + 1); }
+    function prev() { goToSlide(currentIndex - 1); }
+
+    nextBtn.addEventListener('click', () => { next(); resetAutoplay(); });
+    prevBtn.addEventListener('click', () => { prev(); resetAutoplay(); });
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(next, 5500);
+    }
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+    }
+    function resetAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    // Touch swipe
+    let touchStartX = 0;
+    let touchEndX = 0;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) next(); else prev();
+        resetAutoplay();
+      }
+    }, { passive: true });
+
+    // Start autoplay only when carousel is visible (saves resources)
+    const visObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) startAutoplay();
+        else stopAutoplay();
+      });
+    }, { threshold: 0.3 });
+    visObserver.observe(carousel);
+  });
+
+  // ============================================
+  // MOBILE MENU
+  // ============================================
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.querySelector('.nav-links');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      if (navLinks.style.display === 'flex') {
+        navLinks.style.display = '';
+      } else {
+        navLinks.style.display = 'flex';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '60px';
+        navLinks.style.right = '24px';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.background = 'var(--bg-card)';
+        navLinks.style.padding = '12px';
+        navLinks.style.borderRadius = '12px';
+        navLinks.style.border = '1px solid var(--border)';
+        navLinks.style.boxShadow = 'var(--shadow-md)';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
